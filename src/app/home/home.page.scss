@@ -1,0 +1,30 @@
+// *{
+//     outline: 1px solid red;
+// }
+
+.foto-perfil{
+    border-radius: 1rem;
+}
+
+.foto-amigo{
+    border-radius: 50%;
+    height: 9rem;
+    width: 9rem;
+}
+
+.mencao{
+    display: flex;
+    justify-content: center;
+}
+
+.nome{
+    margin-right: 2rem;
+}
+
+.arroba{
+    color: gray;
+}
+
+.titulo{
+    margin-bottom: 1rem;
+}
