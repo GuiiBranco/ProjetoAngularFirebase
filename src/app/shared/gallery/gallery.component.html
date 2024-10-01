@@ -1,0 +1,17 @@
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <h2>Treinos</h2>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ng-container *ngFor="let imagem of this.imagens">
+        <ion-col class="img_equipamentos" size="3">
+          <h2>{{ imagem.titulo }}</h2>
+          <ng-container *ngFor="let fotos of imagem.fotos">
+            <img src="{{ fotos }}" class="img_eqiupamentos">
+          </ng-container>
+        </ion-col>
+      </ng-container>
+
+    </ion-row>

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  fotosTreinos = {
+    pernas: ['', ''],
+    costas: ['', ''],
+    braco: ['', ''],
+    peito: ['', '']
+  }
 }

@@ -12,6 +12,10 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { GalleryModule } from './shared/gallery/gallery.module';
+import { BannerModule } from './shared/components/banner/banner.module';
+import { FooterModule } from './shared/components/footer/footerModule/footer.module';
+import { HeaderModule } from './shared/components/header/header/header.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,8 +28,12 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)), 
     provideAuth(() => getAuth()), 
     provideFirestore(() => getFirestore()), 
-    provideStorage(() => getStorage())
-    
+    provideStorage(() => getStorage()),
+
+    GalleryModule,
+    BannerModule,
+    FooterModule,
+    HeaderModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
