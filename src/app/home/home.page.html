@@ -1,6 +1,23 @@
 <ion-content [fullscreen]="true">
 
-    
-    
+    <!-- BASS - Backend as a service -->
+    <ion-row>
+        <ion-col size="4">
+            Nome do aluno: {{ this.aluno.nome }}
+            <ion-input label="Nome" [(ngModel)]="this.aluno.nome"></ion-input>
+            <ion-button (click)="salvar()">Salvar</ion-button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <ng-container *ngFor="let aluno of this.alunos">
+                <ion-item>
+                    <ion-label>{{ aluno.nome }}</ion-label>
+                    <ion-icon name="trash-outline" (click)="deletar(aluno)"></ion-icon>
+                </ion-item>
+            </ng-container>
+        </ion-col>
+    </ion-row>
 
 </ion-content>

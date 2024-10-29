@@ -12,6 +12,38 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor( ){ }
+  aluno: any = {
+    nome: null
+  }
+
+  alunos: any;
+
+  constructor(
+    public crudService: CrudService
+  ){
+    this.getAluno();
+  }
+
+  getAluno(){
+    this.crudService.fetchAll('aluno')
+    .then(response => {
+      console.log(response);
+      this.alunos = response;
+    })
+  }
+
+  salvar() {
+    this.crudService.insert(this.aluno, 'aluno');
+    this.getAluno();
+  }
+
+  deletar(aluno: any) {
+    console.log(aluno);
+    this.crudService.remove(aluno.id, 'aluno')
+    .then(()=> {
+      this.getAluno();
+    });
+    this.getAluno();
+  }
 
 }
